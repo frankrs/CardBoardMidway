@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
 	void ReleaseBalloon(){
 		GameObject b = GameObject.Instantiate(balloonFactory.balloonObject,new Vector3(Random.Range(balloonFactory.xLimit.min.position.x,balloonFactory.xLimit.max.position.x),balloonFactory.xLimit.min.position.y,Random.Range(balloonFactory.zLimit.min.position.z,balloonFactory.zLimit.max.position.z)),Quaternion.Euler(0f,0f,0f)) as GameObject;
 		b.GetComponent<Balloon>().gameManager = this;
-		b.renderer.material.color = balloonFactory.balloonColors[Random.Range(0,balloonFactory.balloonColors.Length-1)];
+		b.GetComponent<Renderer>().material.color = balloonFactory.balloonColors[Random.Range(0,balloonFactory.balloonColors.Length-1)];
 	}
 
 	public void AddScore(){

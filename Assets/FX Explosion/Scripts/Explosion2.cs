@@ -18,7 +18,7 @@ public class Explosion2 : MonoBehaviour
 
     public void Update()
     {
-        GameObject.Find(this.FxName + "/ExploLight").light.range -= 6.5f * Time.deltaTime;
+        GameObject.Find(this.FxName + "/ExploLight").GetComponent<Light>().range -= 6.5f * Time.deltaTime;
         Destroy(this.gameObject, (float) 5);
     }
 }

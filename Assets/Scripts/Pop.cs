@@ -5,12 +5,12 @@ public class Pop : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		audio.Play();
+		GetComponent<AudioSource>().Play();
 		StartCoroutine("PopBalloon",0f);
 	}
 	
 	IEnumerator PopBalloon(){
-		while (audio.isPlaying){
+		while (GetComponent<AudioSource>().isPlaying){
 			yield return null;
 		}
 		Destroy(gameObject);
